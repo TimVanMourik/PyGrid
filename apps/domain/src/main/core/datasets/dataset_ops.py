@@ -10,10 +10,10 @@ from syft.core.store.storeable_object import StorableObject
 
 from ..database import db
 from ..database.bin_storage.bin_obj import BinObject, ObjectMetadata
-from ..database.bin_storage.json_obj import JsonObject
+from ..database.bin_storage.datasetgroup import JsonObject
 from ..database.store_disk import DiskObjectStore
 from ..database.bin_storage.metadata import get_metadata
-from ..database.dataset.datasetgroup import DatasetGroup
+from ..database.bin_storage.datasetgroup import DatasetGroup
 
 
 def create_dataset(df_json: dict) -> dict:

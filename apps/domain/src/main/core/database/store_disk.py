@@ -20,7 +20,6 @@ from nacl.signing import VerifyKey
 from nacl.encoding import HexEncoder
 from .bin_storage.bin_obj import BinObject, ObjectMetadata
 from syft.core.common.group import VerifyAll
-from .bin_storage.json_obj import JsonObject
 from .bin_storage.metadata import StorageMetadata, get_metadata
 from . import db, BaseModel
 
