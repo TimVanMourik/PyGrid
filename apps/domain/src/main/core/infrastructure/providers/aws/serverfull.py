@@ -231,7 +231,7 @@ class AWS_Serverfull(AWS):
         self.tfscript += self.load_balancer
 
     def write_domain_exec_script(self, app, index=0):
-        branch = "pygrid_0.4.0"
+        branch = "fix_db_issue"
         # exec_script = "#cloud-boothook\n#!/bin/bash\n"
         exec_script = "#!/bin/bash\n"
         exec_script += textwrap.dedent(
@@ -293,7 +293,7 @@ class AWS_Serverfull(AWS):
             ## TODO(amr): remove this after poetry updates
             pip install pymysql
 
-            nohup ./run.sh --port {app.port}  --host 0.0.0.0 --start_local_db
+            nohup ./run.sh --port {app.port}  --host 0.0.0.0
             """
         )
         return exec_script
