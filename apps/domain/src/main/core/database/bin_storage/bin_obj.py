@@ -32,7 +32,7 @@ class ObjectMetadata(BaseModel):
     __tablename__ = "obj_metadata"
 
     id = db.Column(db.Integer(), primary_key=True, autoincrement=True)
-    obj = db.Column(db.Integer, db.ForeignKey("bin_object.id"))
+    obj = db.Column(db.String(255), db.ForeignKey("bin_object.id"))
     tags = db.Column(db.JSON())
     description = db.Column(db.String(255))
     read_permissions = db.Column(db.JSON())
