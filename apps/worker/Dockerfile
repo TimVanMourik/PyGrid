@@ -12,6 +12,6 @@ COPY /src /app/src
 
 WORKDIR /app/
 RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt --no-cache-dir
 
 ENTRYPOINT ["sh", "entrypoint.sh"]
