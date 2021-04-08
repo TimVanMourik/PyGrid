@@ -1,7 +1,7 @@
 version: "3"
 services:
   network:
-    image: openmined/grid-network:production
+    # image: openmined/grid-network:production
     build: ./apps/network
     environment:
       - PORT=7000
@@ -9,8 +9,9 @@ services:
       - DATABASE_URL=sqlite:///databasenetwork.db
     ports:
       - 7000:7000
+
   alice:
-    image: openmined/grid-worker
+    # image: openmined/grid-worker
     build: ./apps/worker
     environment:
       - NODE_ID=Alice
@@ -24,7 +25,7 @@ services:
       - 5000:5000
 
   bob:
-    image: openmined/grid-worker
+    # image: openmined/grid-worker
     build: ./apps/worker
     environment:
       - NODE_ID=Bob
@@ -38,7 +39,7 @@ services:
       - 5001:5001
 
   charlie:
-    image: openmined/grid-worker
+    # image: openmined/grid-worker
     build: ./apps/worker
     environment:
       - NODE_ID=Charlie
@@ -51,7 +52,7 @@ services:
     ports:
       - 5002:5002
   dan:
-    image: openmined/grid-worker
+    # image: openmined/grid-worker
     build: ./apps/worker
     environment:
       - NODE_ID=Dan
@@ -67,7 +68,7 @@ services:
   jupyter:
     image: openmined/pysyft-notebook
     depends_on:
-      - "dan"
+      - "alice"
     ports:
       - 8888:8888
     volumes:
